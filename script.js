@@ -36,8 +36,8 @@ let barChartOptions = {
         },
     },
     colors: [
-        "#d50000",
-        "#2e7d32",
+        "#FF1919",
+        "#00BD35",
 
     ],
     plotOptions: {

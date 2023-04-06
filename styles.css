@@ -154,11 +154,11 @@ body {
 }
 
 .card:nth-child(3) {
-    background-color: #2e7d32;
+    background-color: #00BD35;
 }
 
 .card:nth-child(4) {
-    background-color: #d50000;
+    background-color: #FF1919;
 }
 
 .card-inner {
