@@ -152,3 +152,39 @@ let barChartOptions = {
 
 let barChart = new ApexCharts(document.querySelector("#bar-chart"), barChartOptions);
 barChart.render();
+
+
+/*Table*/
+
+fetch('http://localhost:3000/customers') // The URL should match the server-side script that returns the data
+    .then(response => response.json())
+    .then(data => {
+
+        const tableBody = document.getElementById('table-body-customers');
+
+        data.forEach(item => {
+            const row = tableBody.insertRow(-1);
+            const idCell = row.insertCell(0);
+            const nameCell = row.insertCell(1);
+            const lastnameCell = row.insertCell(2);
+            const birthCell = row.insertCell(3);
+            const phoneCell = row.insertCell(4);
+            const addressCell = row.insertCell(5);
+            const cityCell = row.insertCell(6);
+            const stateCell = row.insertCell(7);
+            const pointsCell = row.insertCell(8);
+
+
+            idCell.textContent = item.customer_id;
+            nameCell.textContent = item.first_name;
+            lastnameCell.textContent = item.last_name;
+            birthCell.textContent = item.birth_date;
+            phoneCell.textContent = item.phone;
+            addressCell.textContent = item.address;
+            cityCell.textContent = item.city;
+            stateCell.textContent = item.state;
+            pointsCell.textContent = item.points;
+
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));
